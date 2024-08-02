@@ -9,7 +9,7 @@
       ],
       "outDir": "./dist",
       "allowJs": true,
-      "jsx": "react-jsx",
+      "jsx": "react",
       "module": "esnext",
       "moduleResolution": "node",
       "skipLibCheck": true,

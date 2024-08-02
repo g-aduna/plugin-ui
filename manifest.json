@@ -1,5 +1,5 @@
 {
-  "name": "Test",
+  "name": "ui-plugin",
   "id": "1400902564195823671",
   "api": "1.0.0",
   "main": "./dist/code.js",
@@ -9,7 +9,7 @@
   "editorType": [
     "figma"
   ],
-  "ui": "./ui.html",
+  "ui": "./dist/ui.html",
   "networkAccess": {
     "allowedDomains": [
       "none"
