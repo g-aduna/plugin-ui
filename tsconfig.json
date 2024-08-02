@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "lib": ["es6", "dom"],
+      "strict": true,
+      "typeRoots": [
+        "./node_modules/@types",
+        "./node_modules/@figma"
+      ],
+      "outDir": "./dist",
+      "allowJs": true,
+      "jsx": "react-jsx",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src/**/*.ts", "webpack.config.js"]
+}
+  
