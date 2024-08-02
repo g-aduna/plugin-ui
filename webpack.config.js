@@ -1,8 +1,7 @@
 const path = require('path');
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 module.exports = (env, argv) => ({
   mode: argv.mode === 'production' ? 'production' : 'development',
@@ -10,7 +9,7 @@ module.exports = (env, argv) => ({
 
   entry: {
     code: './src/code.ts',
-    ui: './src/index.tsx', 
+    ui: './src/index.tsx',
   },
   module: {
     rules: [
@@ -29,9 +28,25 @@ module.exports = (env, argv) => ({
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader,
-           'css-loader', 'postcss-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+              publicPath: 'fonts/',
+            }
+          },
+        ]
+      }
     ],
   },
   resolve: {
@@ -49,9 +64,9 @@ module.exports = (env, argv) => ({
     new HtmlWebpackPlugin({
       template: './src/ui.html',
       filename: 'ui.html',
-      inlineSource: '.(js)$',
+      inlineSource: '.(js|css)$',
       chunks: ['ui'],
     }),
-    new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin)
+    new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
   ],
 });

@@ -4,8 +4,8 @@
   "description": "Your Figma Plugin",
   "main": "code.js",
   "scripts": {
-    "build": "webpack -- mode production",
-    "watch": "webpack --mode development --watch",
+    "build": "bun run webpack --config webpack.config.js",
+    "watch": "bun run webpack --watch --config webpack.config.js",
     "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
     "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix ."
   },
@@ -18,6 +18,9 @@
     "@babel/preset-typescript": "^7.24.7",
     "@figma/eslint-plugin-figma-plugins": "*",
     "@figma/plugin-typings": "^1.97.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
     "@types/bun": "latest",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
