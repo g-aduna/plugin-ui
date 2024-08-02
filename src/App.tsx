@@ -1,13 +1,11 @@
-// src/App.tsx
 import React from 'react';
 
-const App: React.FC = () => {
-    return (
-      <div>
-        <p  className="text-base">Hello, Figma Plugin!</p>
-        <p>This is your Figma plugin UI built with React.</p>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div>
+      <h1 className="font-medium animate-bounce">Hello, Figma Plugin!</h1>
+    </div>
+  );
+};
 
 export default App;

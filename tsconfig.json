@@ -2,20 +2,21 @@
     "compilerOptions": {
       "target": "es6",
       "lib": ["es6", "dom"],
+      "jsx": "react",
       "strict": true,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
       "typeRoots": [
         "./node_modules/@types",
         "./node_modules/@figma"
       ],
       "outDir": "./dist",
       "allowJs": true,
-      "jsx": "react",
-      "module": "esnext",
-      "moduleResolution": "node",
-      "skipLibCheck": true,
-      "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*.ts", "webpack.config.js"]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }
   
