@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/ui/ui.html',
+      template: './src/app/ui.html',
       filename: 'ui.html',
       chunks: ['ui'],
       inject: 'body',
