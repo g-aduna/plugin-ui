@@ -7,7 +7,7 @@ module.exports = {
   devtool: process.env.NODE_ENV === 'production' ? false : 'inline-source-map',
 
   entry: {
-    code: './src/code.ts',
+    code: './src/code/code.ts',
     ui: './src/index.tsx',
   },
   module: {
@@ -37,7 +37,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/ui.html',
+      template: './src/ui/ui.html',
       filename: 'ui.html',
       chunks: ['ui'],
       inject: 'body',
