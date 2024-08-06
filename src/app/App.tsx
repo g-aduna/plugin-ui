@@ -27,10 +27,12 @@ export function RootLayout({ children }: RootLayoutProps) {
 const App = () => {
   return (
     <RootLayout>
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <ModeToggle />
-        <div className="font-[Inter] font-medium text-xl animate-bounce dark:bg-gray-800 dark:text-white">
-          <p>Hello, this is a dark mode themed component!</p>
+        <div className="flex-grow self-center justify-center">
+          <p className=
+          "font-[Inter] font-medium text-xl animate-bounce dark:bg-gray-800 dark:text-white w-fit">
+            Hello, this is a dark mode themed component!</p>
         </div>
       </div>
     </RootLayout>
