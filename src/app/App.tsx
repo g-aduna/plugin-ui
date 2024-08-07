@@ -62,7 +62,7 @@ const App = () => {
         </div>
         <div className="flex-grow items-center justify-center inline-flex">
           <p className="font-[Inter] font-medium text-xl dark:text-white w-fit">
-            Hello, this is a dark mode themed component with Spline!
+            Select an autolayout to begin export.
           </p>
         </div>
         <div className="flex justify-center items-stretch">
