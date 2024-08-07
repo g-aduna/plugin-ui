@@ -1,7 +1,7 @@
 // index.tsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/index.css';
+import './styles/globals.css';
 import App from './app/App';
 
 const container = document.getElementById('root');

@@ -1,0 +1,44 @@
+.
+├── .DS_Store
+├── .babelrc
+├── .gitignore
+├── README.md
+├── bun.lockb
+├── components.json
+├── dist
+│   ├── code.js
+│   └── ui.html
+├── file_structure.txt
+├── manifest.json
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── src
+│   ├── app
+│   │   ├── App.tsx
+│   │   └── ui.html
+│   ├── code
+│   │   └── code.ts
+│   ├── components
+│   │   ├── mode-toggle.tsx
+│   │   ├── theme-provider.tsx
+│   │   └── ui
+│   │       ├── button.tsx
+│   │       └── dropdown-menu.tsx
+│   ├── fonts
+│   │   ├── Inter-Italic-VariableFont_opsz,wght.ttf
+│   │   └── Inter-VariableFont_opsz,wght.ttf
+│   ├── index.tsx
+│   ├── lib
+│   │   └── utils.ts
+│   ├── styles
+│   │   ├── globals.css
+│   │   ├── index.css
+│   │   └── styles.css
+│   └── types
+│       └── index.ts
+├── tailwind.config.js
+├── tsconfig.json
+└── webpack.config.js
+
+11 directories, 31 files
