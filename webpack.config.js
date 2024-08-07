@@ -6,6 +6,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   devtool: false,
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+  },
 
   optimization: {
     splitChunks: false,

@@ -21,13 +21,19 @@ import {
 } from "../components/ui/card";
 import {
   Menubar,
+  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
   MenubarSeparator,
   MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
   MenubarTrigger,
-} from "../components/ui/menubar";
+} from "../components/ui/menubar"
 import DynamicIframe from "../components/iframe";
 import { RootLayoutProps } from "../types";
 import { Button } from "../components/ui/button";
@@ -55,9 +61,9 @@ export function RootLayout({ children }: RootLayoutProps) {
 const App = () => {
   return (
     <RootLayout>
-      {/* <div className="fixed inset-0 h-full w-full z-0">
+      <div className="fixed inset-0 h-full w-full z-0">
         <DynamicIframe />
-      </div> */}
+      </div>
       <div className="p-2 flex flex-col flex-grow z-10 gap-2">
         <div className="inline-flex flex-row items-center justify-between">
           <h3 className="font-[Inter] dark:text-white scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -80,29 +86,99 @@ const App = () => {
         <div className="flex flex-auto">
           <Card className="flex flex-row justify-center items-center gap-6 flex-auto">
             <CardContent className="flex flex-auto flex-col gap-6 items-center">
-              <p className="font-[Inter] font-normal text-base dark:text-zinc-200 text-zinc-800 w-fit">
-                Select an autolayout to begin export.
+              <p className="font-normal text-base dark:text-zinc-200 text-zinc-800 w-fit">
+                Select an auto layout to begin export.
               </p>
               <div className="flex-col justify-start items-center gap-2 inline-flex">
                 <p className=
-                  "text-center text-zinc-700 dark:text-zinc-300 text-sm font-medium font-['Inter'] leading-tight">
+                  "text-center text-zinc-700 dark:text-zinc-300 text-sm font-medium leading-tight">
                     Component type for selection.
                 </p>
                 <Menubar>
                   <MenubarMenu>
-                    <MenubarTrigger>Embedded View</MenubarTrigger>
+                    <MenubarTrigger>File</MenubarTrigger>
                     <MenubarContent>
                       <MenubarItem>
                         New Tab <MenubarShortcut>⌘T</MenubarShortcut>
                       </MenubarItem>
-                      <MenubarItem>New Window</MenubarItem>
+                      <MenubarItem>
+                        New Window <MenubarShortcut>⌘N</MenubarShortcut>
+                      </MenubarItem>
+                      <MenubarItem disabled>New Incognito Window</MenubarItem>
                       <MenubarSeparator />
-                      <MenubarItem>Share</MenubarItem>
+                      <MenubarSub>
+                        <MenubarSubTrigger>Share</MenubarSubTrigger>
+                        <MenubarSubContent>
+                          <MenubarItem>Email link</MenubarItem>
+                          <MenubarItem>Messages</MenubarItem>
+                          <MenubarItem>Notes</MenubarItem>
+                        </MenubarSubContent>
+                      </MenubarSub>
                       <MenubarSeparator />
-                      <MenubarItem>Print</MenubarItem>
+                      <MenubarItem>
+                        Print... <MenubarShortcut>⌘P</MenubarShortcut>
+                      </MenubarItem>
                     </MenubarContent>
-                    <MenubarTrigger>Repeater</MenubarTrigger>
-                    <MenubarTrigger>Flexbox</MenubarTrigger>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>Edit</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>
+                        Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+                      </MenubarItem>
+                      <MenubarItem>
+                        Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+                      </MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarSub>
+                        <MenubarSubTrigger>Find</MenubarSubTrigger>
+                        <MenubarSubContent>
+                          <MenubarItem>Search the web</MenubarItem>
+                          <MenubarSeparator />
+                          <MenubarItem>Find...</MenubarItem>
+                          <MenubarItem>Find Next</MenubarItem>
+                          <MenubarItem>Find Previous</MenubarItem>
+                        </MenubarSubContent>
+                      </MenubarSub>
+                      <MenubarSeparator />
+                      <MenubarItem>Cut</MenubarItem>
+                      <MenubarItem>Copy</MenubarItem>
+                      <MenubarItem>Paste</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>View</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+                      <MenubarCheckboxItem checked>
+                        Always Show Full URLs
+                      </MenubarCheckboxItem>
+                      <MenubarSeparator />
+                      <MenubarItem inset>
+                        Reload <MenubarShortcut>⌘R</MenubarShortcut>
+                      </MenubarItem>
+                      <MenubarItem disabled inset>
+                        Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+                      </MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarItem inset>Hide Sidebar</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>Profiles</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarRadioGroup value="benoit">
+                        <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
+                        <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
+                        <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
+                      </MenubarRadioGroup>
+                      <MenubarSeparator />
+                      <MenubarItem inset>Edit...</MenubarItem>
+                      <MenubarSeparator />
+                      <MenubarItem inset>Add Profile...</MenubarItem>
+                    </MenubarContent>
                   </MenubarMenu>
                 </Menubar>
               </div>

@@ -69,4 +69,28 @@
   }
 }
 
-@include "./styles.css";
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter Italic';
+  src: url('../fonts/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  @apply bg-white dark:bg-gray-900 text-black dark:text-white;
+}
+
+.spline-watermark {
+  display: none !important;
+}
